@@ -9,6 +9,7 @@ app = FastAPI(title="SiteSage ApI", version="0.1.0")
 
 
 origins = os.getenv("CORS_ORIGINS", "").split(",")
+origins.append("https://site-sage-delta.vercel.app")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[o.strip() for o in origins if o],
